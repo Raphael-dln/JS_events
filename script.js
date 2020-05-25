@@ -70,10 +70,25 @@ let onHeaderClick2 = function() {
 }
 bootstrap.addEventListener('dblclick', onHeaderClick); 
 
+
 //T'as déjà implémenté 5 fonctionnalités d'interaction ! C'est top ! On va commencer à corser les choses.
 //La fonctionnalité sera la suivante : si un utilisateur passe sa souris sur le bouton "View" d'une card (n'importe laquelle), celle-ci va se réduire. Cela veut dire que le texte disparaît, l'image n'apparaîtra qu'à 20 % de sa taille d'origine et les boutons "Edit" / "View" restent visibles. Cette fonction sera réversible : s'il repasse sa souris, la card redevient normale !
 
+let btnView = document.getElementsByClassName('btn btn-sm btn-success');
+let cardText4 = document.getElementsByClassName('card-text');
+let cardImg = document.getElementsByClassName("card-img-top");
 
+ for (let i = 0; i < btnView.length; i++){
+    btnView[i].addEventListener('mouseover', function () {
+      if (cardText4[i].style.display !== 'none') {
+        cardText4[i].style.display = 'none';
+        cardImg[i].style.width = "20%"
+      } else {
+        cardText4[i].style.display = '';
+        cardImg[i].style.width = "100%"
+      }
+    })
+ }
 
 
 
