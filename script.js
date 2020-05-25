@@ -109,3 +109,23 @@ btnPreviousElt.addEventListener('click', function (){
 
 // Fonctionnalité 9 
 
+let logoNav = document.getElementsByClassName("navbar-brand d-flex align-items-center")[0];
+var body = document.body
+
+
+let onLogoNav = function (e) {
+  if (e.key === "a") {
+    body.className = ''
+    body.classList.add("col-4");
+    
+  } else if (e.key === "y") {
+    body.className = ''
+    body.classList.add("col-4", "offset-md-4");
+  } else if (e.key === "p") {
+    body.className = ''
+    body.classList.add("col-4", "offset-md-8");   
+  } else if (e.key === "b") {
+    body.className = ''
+  }
+}
+logoNav.addEventListener('keypress', onLogoNav)
